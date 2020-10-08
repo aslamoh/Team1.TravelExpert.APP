@@ -1,0 +1,37 @@
+﻿@model List<Team1.TravelExpert.App.Models.BookingViewModel>
+@{
+    ViewBag.Title = "ProductData";
+}
+
+<h2>Customer Booking Detail</h2>
+
+
+
+<table class="table">
+    <tr>
+        <th>Booking ID</th>
+        <th>Booking Number</th>
+        <th>Booking Date</th>
+        <th>Description</th>
+        <th>Destination</th>
+        <th>Base Price($)</th>
+        <th>Package Price($)</th>
+        <th>Commission($)</th>
+        @*<th>Package Detail</th>*@
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.bookings.BookingId</td>
+            <td>@item.bookings.BookingNo</td>
+            <td>@item.bookings.BookingDate</td>
+            <td>@item.bookingDeatils.Description</td>
+            <td>@item.bookingDeatils.Destination</td>
+            <td>@item.bookingDeatils.BasePrice</td>
+            <td>@item.packages.PkgBasePrice</td>
+            <td>@item.bookingDeatils.AgencyCommission</td>
+        </tr>
+
+    }
+    <button type="button" class="btn btn-default"><a href="/Booking/ProductData/">Product Details</a></button>
+

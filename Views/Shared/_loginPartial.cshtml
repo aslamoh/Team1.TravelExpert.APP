@@ -1,0 +1,44 @@
+﻿@*partial view of nav barr for  user not logged in*@
+@if (Session["UserID"] == null)
+
+{ 
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("AboutUs", "About", "Home")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        @*<li>@Html.ActionLink("My Account", "Index", "Customer")</li>*@
+        <li>@Html.ActionLink("Register", "Create", "Customer")</li>
+        <li>@Html.ActionLink("Login", "Login", "Account")</li>
+    </ul>
+}
+@*partial view of nav barr for  user  logged in*@
+else
+{
+    <ul class="nav navbar-nav">
+    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+    <li>@Html.ActionLink("AboutUs", "About", "Home")</li>
+    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+</ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Welcome! " + Session["CustFirstName"], "Index", "Home", null, null)</li>
+        @*<li>@Html.ActionLink("My Account", "Index", "Customer")</li>*@
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="~/Customer/CustomerProfile">Profile</a></li>
+                <li><a href="~/Customer/EditProfile">Update Profile</a></li>
+                 <li><a href="~/Booking/BookingData">Booking History</a></li>
+            </ul>
+        </li>
+        @*<li>@Html.ActionLink("Register", "Create", "Customer")</li>*@
+        <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+        
+
+
+    </ul>
+
+
+
+}

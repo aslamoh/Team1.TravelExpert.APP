@@ -1,0 +1,27 @@
+﻿@model List<Team1.TravelExpert.App.Models.BookingViewModel>
+@{
+    ViewBag.Title = "ProductData";
+}
+
+<h2>Customer Product  Detail</h2>
+<table class="table">
+    <tr>
+        <th>First Name</th>*
+        <th>Product Name</th>
+        <th>Base Price</th>
+        <th>Booking ID</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.customers.CustFirstName</td>
+            <td>@item.products.ProdName</td>
+            <td>@item.bookingDeatils.BasePrice</td>
+            <td>@item.bookings.BookingId</td>
+        </tr>
+    }
+
+</table>
+@*<a href="/Customer/CustomerProfile">UserProfile</a>*@
+<button type="button" class="btn btn-default"><a href="/Customer/CustomerProfile"><strong>Profile</strong></button>
