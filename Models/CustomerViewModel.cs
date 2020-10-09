@@ -14,35 +14,35 @@ namespace Team1.TravelExpert.App.Models
         public int CustomerId { get; set; }
         [Required]
         [StringLength(25)]
-        [Display(Name = "First Name")]
+        [Display(Name = "First Name*")]
         public string CustFirstName { get; set; }
         [Required]
         [StringLength(25)]
-        [Display(Name = "Last Name")]
+        [Display(Name = "Last Name*")]
         public string CustLastName { get; set; }
         [Required]
         [StringLength(75)]
-        [Display(Name = "Address")]
+        [Display(Name = "Address*")]
         public string CustAddress { get; set; }
         [Required]
         [StringLength(50)]
-        [Display(Name = "City")]
+        [Display(Name = "City*")]
         public string CustCity { get; set; }
         [Required]
         [StringLength(2)]
-        [Display(Name = "Province")]
+        [Display(Name = "Province*")]
         public string CustProv { get; set; }
         [Required]
         [RegularExpression(@"^(?!.*[DFIOQU])[A-VXY][0-9][A-Z] ?[0-9][A-Z][0-9]$",
          ErrorMessage = "Must be valid postal code")]
         [StringLength(7)]
-        [Display(Name = "Postal Code")]
+        [Display(Name = "Postal Code*")]
         public string CustPostal { get; set; }
         [StringLength(25)]
-        [Display(Name = "Country")]
+        [Display(Name = "Country*")]
         public string CustCountry { get; set; }
         [StringLength(20)]
-        [Display(Name = "Home Phone")]
+        [Display(Name = "Home Phone*")]
         public string CustHomePhone { get; set; }
         [StringLength(20)]
         [Display(Name = "Business Phone")]
@@ -52,13 +52,15 @@ namespace Team1.TravelExpert.App.Models
         public string CustEmail { get; set; }
         [Required]
         [StringLength(25)]
+        [Display(Name = "UserName*")]
         public string UserName { get; set; }
         [Required]
         [StringLength(50)]
+        [Display(Name = "Password*")]
         public string Password { get; set; }
         [Required]
         [StringLength(50)]
-        [Display(Name = "Confirm Password")]
+        [Display(Name = "Confirm Password*")]
         [Compare("Password", ErrorMessage = "Password Does Not Match")]
         public string ConfirmPassword { get; set; }
 
